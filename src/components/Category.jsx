@@ -8,21 +8,21 @@ import { AiFillHeart } from "react-icons/ai";
 function Category() {
    return (
       <List>
-         <SLink to={'/cuisine/Italian'}>
+         <SLink to={'/top/top'}>
             <FaPizzaSlice />
-            <h4>Italian</h4>
+            <h4>Top Manga</h4>
          </SLink>
-         <SLink to={'/cuisine/American'}>
+         <SLink to={'/genres/publishing'}>
             <FaHamburger />
-            <h4>American</h4>
+            <h4>publishing</h4>
          </SLink>
-         <SLink to={'/cuisine/Thai'}>
+         <SLink to={'/genres/bypopularity'}>
             <GiNoodles />
-            <h4>Thai</h4>
+            <h4>bypopularity</h4>
          </SLink>
-         <SLink to={'/cuisine/Japanese'}>
+         <SLink to={'/genres/favorite'}>
             <GiChopsticks />
-            <h4>Japanese</h4>
+            <h4>favorite</h4>
          </SLink>
          <SLink to={'/favourites'}>
             <AiFillHeart />

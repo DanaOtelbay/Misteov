@@ -14,19 +14,10 @@ function Popular() {
    }, []);
 
    const getPopular = async() => {
-
-      const check = localStorage.getItem('popular');
-
-      if(check){
-         setPopular(JSON.parse(check));
-      }else{
-         const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20`);
-         const data = await api.json();
-
-         localStorage.setItem('popular', JSON.stringify(data.recipes));
-         setPopular(data.recipes);
-         console.log(data.recipes);
-      }
+      const api = await fetch(`https://api.jikan.moe/v4/manga?limit=20`);
+      const d = await api.json();
+      setPopular(d.data);
+      console.log(d);
    }
 
    return (
@@ -43,13 +34,13 @@ function Popular() {
                   gap: "5rem",
                }}
             >
-               {popular.map((recipe) => {
+               {popular.map((manga) => {
                   return(
-                     <SplideSlide key={recipe.id}>
+                     <SplideSlide key={manga.mal_id}>
                         <Card 
-                           id={recipe.id}
-                           title={recipe.title}
-                           image={recipe.image}
+                           id={manga.mal_id}
+                           title={manga.title}
+                           image={manga.images.jpg.large_image_url}
                         ></Card>
                      </SplideSlide>
                   );

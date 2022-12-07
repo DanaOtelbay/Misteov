@@ -2,24 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import {Link, useParams} from 'react-router-dom';
-import CartContext from '../context/CartContext';
 
-function Cuisine() {
-   const [cuisine, setCuisine] = React.useState([]);
-   const [addTab, setAddTab] = React.useState(true);
+function Top() {
+   const [top, setTop] = React.useState([]);
    let params = useParams();
 
-   const {addToCart} = React.useContext(CartContext);
-
-   const getCuisine = async(name) => {
-      const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`);
-      const recipes = await data.json();
-      setCuisine(recipes.results);
+   const getTop = async(name) => {
+      const data = await fetch(`https://api.jikan.moe/v4/${name}/manga`);
+      const mangas = await data.json();
+      setTop(mangas.data);
+      console.log(mangas.data);
    };
 
    React.useEffect(() => {
-      getCuisine(params.type);
-      console.log(params.type);
+      getTop(params.type);
    }, [params.type]);
 
    return (
@@ -30,12 +26,13 @@ function Cuisine() {
          transition={{duration: 0.5}}
 
       >
-         {cuisine.map((item) => {
+         {top.map((item) => {
             return(
-               <Card key={item.id}>
-                  <Link to={'/recipe/' + item.id}>
-                     <img src={item.image} />
+               <Card key={item.mal_id}>
+                  <Link to={'/detail/' + item.mal_id}>
+                     <img src={item.images.jpg.large_image_url} />
                      <h4>{item.title}</h4>
+                     <p>Score: {item.score}</p>
                   </Link>
                </Card>
             );
@@ -66,4 +63,4 @@ const Card = styled.div`
    }
 `;
 
-export default Cuisine
+export default Top

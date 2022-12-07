@@ -1,16 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from "styled-components";
 import '@splidejs/splide/dist/css/splide.min.css';
 import {Link} from 'react-router-dom';
-import CartContext from '../context/CartContext';
-import { AiFillHeart } from "react-icons/ai";
 
 function Card({id, title, image}) {
-  const {addToCart} = useContext(CartContext);
 
   return (
       <CardStyle>
-        <Link to={'/recipe/' + id}>
+        <Link to={'/detail/' + id}>
           <p>{title}</p>
           <img src={image} alt={title} />
           <Gradient/>

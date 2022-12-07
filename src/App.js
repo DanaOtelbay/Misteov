@@ -15,7 +15,7 @@ function App() {
           <Nav>
             <GiKnifeFork></GiKnifeFork>
             <Logo to={'/'}> 
-              delicious
+              misteov
             </Logo>
           </Nav>
           <Search></Search>

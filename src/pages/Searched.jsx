@@ -10,10 +10,11 @@ function Searched() {
 
    const getSearched = async(name) => {
       const data = await fetch(
-         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`
+         `https://api.jikan.moe/v4/manga?q=${name}`
       );
       const recipes = await data.json();
-      setSearchedRecipes(recipes.results);
+      console.log(recipes.data);
+      setSearchedRecipes(recipes.data);
    };
 
    useEffect(() => {
@@ -24,14 +25,15 @@ function Searched() {
       <Grid>
          {
             seached.map((item) => {
-               return(
-                  <Card key={item.id}>
-                     <Link to={'/recipe/' + item.id}>
-                        <img src={item.image}></img>
-                        <h4>{item.title}</h4>
-                     </Link>
-                  </Card>
-               );
+               if(item.explicit_genres.length === 0){
+                  return(
+                     <Card key={item.mal_id}>
+                        <Link to={'/detail/' + item.mal_id}>
+                           <img src={item.images.jpg.large_image_url}></img>
+                        </Link>
+                     </Card>
+                  );
+               }
             })
          }
       </Grid>
