@@ -39,3 +39,6 @@ npm install
 npm i framer-motion react-icons react-router-dom styled-components
 npm start
 ```
+## Future scope
+
+- Add other categories and personal lists for users, authorization.
