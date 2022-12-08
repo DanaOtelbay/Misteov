@@ -2,7 +2,7 @@
 
 <h2 align="center">Project for INFT3139 JS Framework: React</h2>
 
-<img src="/sample.jpeg">
+<img src="sample.jpg">
 
 ## Description
 Manga tracker app for your favourite manga on React JS. 
