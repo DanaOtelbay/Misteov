@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import React, { useContext, useEffect, useState } from 'react';
 import CartContext from "../context/CartContext";
+import { AiFillHeart} from "react-icons/ai";
 
 function Detail() {
   let params = useParams();
@@ -9,7 +10,6 @@ function Detail() {
   const [activeTab, setActiveTab] = useState('synopsis');
   const [addTab, setAddTab] = useState(true);
   const [image, setImage] = useState('');
-
   const {addToCart} = useContext(CartContext);
 
   const fetchDetails = async () => {
@@ -28,25 +28,27 @@ function Detail() {
   return (
     <DetailWrapper>
       <div>
-        <h2>{details.title}</h2>
         <img src={image}/>
+        <h2>{details.title}</h2>
       </div>
 
       <Info>
+        
         <Button 
           className={activeTab === 'synopsis' ? 'active' : ''}
           onClick={() => setActiveTab('synopsis')} 
         >
           Synopsis
         </Button>
-
+          
         <Button 
           className={activeTab === 'rate' ? 'active' : ''}
           onClick={() => setActiveTab('rate')} 
         >
-          Rate
+          Rates
         </Button>
-
+ 
+        
         {addTab && (
           <Button 
             onClick={() => {
@@ -54,10 +56,11 @@ function Detail() {
               setAddTab(false);
             }}
           >
-            Favourites
+             <AiFillHeart />
           </Button>
         )}
-  
+   
+
         {activeTab === 'synopsis' && (
           <div>
             <h3 dangerouslySetInnerHTML={ {__html: details.background} } ></h3>
@@ -73,16 +76,20 @@ function Detail() {
             <h3>Likes: {details.favorites}</h3>
           </div>
         )}
-      
+
       </Info>
     </DetailWrapper>
   );
 }
 
 const DetailWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 1rem;
   margin-bottom: 5rem;
   display: flex;
+
+  img{
+    border-radius: 2rem;
+  }
 
   .active{
     background: linear-gradient(35deg, #494949, #313131);
@@ -91,28 +98,33 @@ const DetailWrapper = styled.div`
 
   h2{
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   li{
     font-size: 1.2rem;
     line-height: 2.5rem;
+
   }
 
-  ul{
-    margin-top:  2rem;
+  h3{
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.5;
   }
 `;
 
 const Button = styled.button`
-  padding:  1rem 2rem;
+  padding:  1rem 1rem;
   color: #313131;
   background: white;
   border: 2px solid black;
   margin-right: 2rem;
   font-weight: 600;
+  border-radius: 50%;
 
   :hover{
-    background: linear-gradient(35deg, #494949, #313131);
+    background: linear-gradient(35deg, #FA8072,#B22222);
     color: white;
   }
 `;

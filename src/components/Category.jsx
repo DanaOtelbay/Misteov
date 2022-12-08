@@ -1,28 +1,24 @@
-import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
-import {GiNoodles, GiChopsticks } from 'react-icons/gi';
+import {FaExclamation} from 'react-icons/fa';
+import { RxDotsHorizontal } from "react-icons/rx";
+import { AiFillHeart, AiOutlineStar } from "react-icons/ai";
 import styled from 'styled-components';
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import { AiFillHeart } from "react-icons/ai";
 
 function Category() {
    return (
       <List>
          <SLink to={'/top/top'}>
-            <FaPizzaSlice />
+            <FaExclamation />
             <h4>Top Manga</h4>
          </SLink>
          <SLink to={'/genres/publishing'}>
-            <FaHamburger />
-            <h4>publishing</h4>
+            <RxDotsHorizontal />
+            <h4>Ongoing</h4>
          </SLink>
          <SLink to={'/genres/bypopularity'}>
-            <GiNoodles />
-            <h4>bypopularity</h4>
-         </SLink>
-         <SLink to={'/genres/favorite'}>
-            <GiChopsticks />
-            <h4>favorite</h4>
+            <AiOutlineStar />
+            <h4>Popular</h4>
          </SLink>
          <SLink to={'/favourites'}>
             <AiFillHeart />
@@ -63,8 +59,9 @@ const SLink = styled(NavLink)`
    }
 
    &.active{
-      background: linear-gradient(to right, #f27121, #e94057);
-
+      background: linear-gradient(35deg, #FA8072,#B22222);
+   }
+   
       svg{
          color: white;
       }

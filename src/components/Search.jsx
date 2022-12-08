@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 function Search() {
    const [input, setInput] = useState("");
    const navigate = useNavigate();
-
+   
    const submitHandler = (e) => {
       e.preventDefault();
       navigate('/searched/' + input);
@@ -27,7 +27,7 @@ function Search() {
 }
 
 const FormStyle = styled.form`
-   margin: 0rem 20rem;
+   margin: 0rem 10rem;
    
    div{
       position: relative;
@@ -37,11 +37,12 @@ const FormStyle = styled.form`
    input{
       border: none;
       background: linear-gradient(35deg, #494949, #313131);
-      font-size: 1.5rem;
+      font-size: 1rem;
       padding:  1rem 3rem;
       border-radius: 1rem;
       outline: none;
       width: 100%;
+      color: white;
    }
 
    svg{

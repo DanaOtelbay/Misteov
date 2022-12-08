@@ -39,7 +39,6 @@ function Genres() {
                   <Link to={'/detail/' + item.mal_id}>
                      <img src={item.images.jpg.large_image_url} />
                      <h4>{item.title}</h4>
-                     <p>Score: {item.score}</p>
                   </Link>
                </Card>
                );
@@ -51,14 +50,15 @@ function Genres() {
 
 const Grid = styled(motion.div)`
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-   grid-gap: 3rem;
+   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+   grid-gap: 2rem;
 `;
 
 const Card = styled.div`
    img{
       width: 100%;
       border-radius: 2rem;
+      height: 40vh;
    }
 
    a{
@@ -69,6 +69,7 @@ const Card = styled.div`
       text-align: center;
       padding: 1rem;
    }
+
 `;
 
 export default Genres

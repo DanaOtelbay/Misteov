@@ -12,7 +12,7 @@ function Main() {
   }, []);
 
   const getMain = async() => {
-      const api = await fetch(`https://api.jikan.moe/v4/manga?`);
+      const api = await fetch(`https://api.jikan.moe/v4/manga?limit=25`);
       const d = await api.json();
       setMain(d.data);
   }
@@ -50,8 +50,9 @@ function Main() {
 }
 const Grid = styled(motion.div)`
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
    grid-gap: 3rem;
+   margin: 2rem 2rem 2rem 2rem;
 `;
 
 export default Main
