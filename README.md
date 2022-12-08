@@ -1,5 +1,5 @@
 <h1 align="center">Misteov: Manga Tracker</h1>
-<h2><a href="https://github.com/gabdulova">Salim Binazir</a>
+<h2 align="center"><a href="https://github.com/gabdulova">Salim Binazir</a>
 <a href="https://github.com/DanaOtelbay?">Otelbay Dana</a></h2>
 <h2 align="center">Project for INFT3139 JS Framework: React</h2>
 
@@ -14,7 +14,9 @@ Manga tracker app for your favourite manga on React JS.
 3. Components, State - ✔️
 4. Lifecycle methods - ✔️
 5. API Requests - ✔️
+
 <a  href="https://docs.api.jikan.moe/"> Jikan (時間) </a> is an open-source PHP & REST API for the “most active online anime + manga community and database” — MyAnimeList.net. It parses the website to satisfy the need for an API. 
+
 6. Hooks - ✔️
 7. Navigation - ✔️
 8. Context System - ✔️
