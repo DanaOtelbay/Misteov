@@ -28,7 +28,7 @@ Manga tracker app for your favourite manga on React JS.
 - **Click** on the categories that are on navigation bar and then the page with the catalog of this category will be opened.
 - **Click** on the Favorites category and only manga added by current user will be displayed.
 - **Click** on the 🗑️ and the manga will be deleted from the favourite list of current user.
-
+- **Click** on the search bar and type whatever you want, and the search results will show up. (P.s. there is some troubles with explicit genres, so some R-rated manga will show up as well.)
 <img src="sample2.jpg">
 <img src="sample3.jpg">
 <img src="sample4.jpg">
