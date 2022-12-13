@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 
 function Searched() {
 
-   const [seached, setSearchedRecipes ] = useState([]);
+   const [seached, setSearchedMangas] = useState([]);
    let params = useParams();
 
    const getSearched = async(name) => {
       const data = await fetch(
          `https://api.jikan.moe/v4/manga?q=${name}`
       );
-      const recipes = await data.json();
-      console.log(recipes.data);
-      setSearchedRecipes(recipes.data);
+      const mangas = await data.json();
+      console.log(mangas.data);
+      setSearchedMangas(mangas.data);
    };
 
    useEffect(() => {
@@ -25,7 +25,13 @@ function Searched() {
       <Grid>
          {
             seached.map((item) => {
-               if(item.explicit_genres.length === 0){
+               let show = true;
+               for(let i = 0; i < item.genres.length; i++){
+                  if(item.genres[i].name === "Ecchi" || item.genres[i].name === "Erotica" || item.genres[i].name === "Hentai"){
+                     show = false;
+                  }
+               }
+               if(show){
                   return(
                      <Card key={item.mal_id}>
                         <Link to={'/detail/' + item.mal_id}>

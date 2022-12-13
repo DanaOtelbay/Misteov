@@ -6,7 +6,14 @@ export function CartProvider({children}) {
    const [items, setItems] = useState([]);
 
    const addToCart = (id, title, image) => {
-      setItems((prevState) => [...prevState, {id, title, image}]);
+      const index = items.findIndex((mymanga) => {
+         return mymanga.id === id;
+      })
+      
+      if(index < 0){
+         const newArray = [...items,  {id, title, image}];
+         setItems(newArray);
+      }
    }
 
    const removeFromCart = (id, title, image) => {

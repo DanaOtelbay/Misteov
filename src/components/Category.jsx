@@ -60,7 +60,6 @@ const SLink = styled(NavLink)`
 
    &.active{
       background: linear-gradient(35deg, #FA8072,#B22222);
-   }
    
       svg{
          color: white;
