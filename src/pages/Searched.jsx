@@ -48,26 +48,24 @@ function Searched() {
 
 const Grid = styled.div`
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
    grid-gap: 3rem;
+   margin: 2rem;
 `;
 
 const Card = styled.div`
+   min-height: 25rem;
+   border-radius: 2rem;
+   overflow: hidden;
+   position: relative;
 
 img{
-   width: 100%;
    border-radius: 2rem;
-   height: 40vh;
-}
-
-   a{
-      text-decoration: none;
-   }
-
-   h4{
-      text-align: center;
-      padding: 1rem;
-   }
-`;
+   position: absolute;
+   left: 0;
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+}`;
 
 export default Searched
