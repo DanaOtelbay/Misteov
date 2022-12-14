@@ -50,26 +50,41 @@ function Genres() {
 
 const Grid = styled(motion.div)`
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-   grid-gap: 2rem;
+   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+   grid-gap: 3rem;
+   margin: 2rem;
 `;
 
 const Card = styled.div`
-   img{
-      width: 100%;
-      border-radius: 2rem;
-      height: 40vh;
-   }
+   min-height: 25rem;
+   border-radius: 2rem;
+   overflow: hidden;
+   position: relative;
 
-   a{
-      text-decoration: none;
-   }
+img{
+   border-radius: 2rem;
+   position: absolute;
+   left: 0;
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+}
 
-   h4{
-      text-align: center;
-      padding: 1rem;
-   }
-
-`;
+h4{
+   position: absolute;
+   z-index: 10;
+   bottom: 0%;
+   left: 50%;
+   transform: translate(-50%, 0%);
+   color: blanchedalmond;
+   background-color:black;
+   width: 100%;
+   text-align: center;
+   font-weight: 600;
+   font-size: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}`;
 
 export default Genres

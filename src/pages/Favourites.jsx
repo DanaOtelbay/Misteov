@@ -39,18 +39,14 @@ const Grid = styled(motion.div)`
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
    grid-gap: 2rem;
+   margin: 2rem;
 `;
-
 
 const Card = styled.div`
    img{
       width: 250px;
       border-radius: 2rem;
       height: 400px;
-   }
-
-   a{
-      text-decoration: none;
    }
 
    h4{

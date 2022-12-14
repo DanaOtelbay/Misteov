@@ -36,7 +36,8 @@ const CardStyle = styled.div`
     bottom: 0%;
     left: 50%;
     transform: translate(-50%, 0%);
-    color: white;
+    color: blanchedalmond;
+    background-color:black;
     width: 100%;
     text-align: center;
     font-weight: 600;

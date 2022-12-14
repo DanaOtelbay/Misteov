@@ -52,7 +52,7 @@ const Grid = styled(motion.div)`
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
    grid-gap: 3rem;
-   margin: 2rem 2rem 2rem 2rem;
+   margin: 2rem;
 `;
 
 export default Main
